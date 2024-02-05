@@ -10,11 +10,15 @@ const getInput = document.querySelector("input");
 const getDiv = document.querySelector("div#boxes");
 
 let createdBoxes = []; 
-let boxSize = 30;
+
 
 function createBoxes(amount) {
+   createdBoxes.forEach(box => box.remove());
+  createdBoxes = [];
+    let boxSize = 30;
   if (amount <= 100 && amount >= 1) {
     for (let i = 0; i < amount; i++) {
+    
       const elementDiv = document.createElement("div");
       elementDiv.style.width = `${boxSize}px`;
       elementDiv.style.height = `${boxSize}px`;

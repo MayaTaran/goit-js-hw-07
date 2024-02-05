@@ -13,16 +13,18 @@ const images = [
   },
 ];
 const getGallery = document.querySelector(".gallery");
-
+const fragment = document.createDocumentFragment();
 
 images.forEach(element => {
-   const imageLi = document.createElement("li");
+  const imageLi = document.createElement("li");
   const image = document.createElement("img");
   image.setAttribute("src", element.url);
   image.setAttribute("alt", element.alt);
   imageLi.appendChild(image);
- getGallery.appendChild(imageLi);
+  fragment.appendChild(imageLi);
 });
+
+getGallery.appendChild(fragment);
 
 
 //console.log(getGallery);
